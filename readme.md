@@ -1,1 +1,1 @@
-Repositório para criação de uma vpc na AWS
+Repositório para o gerenciamento de banco de dados relacionais
