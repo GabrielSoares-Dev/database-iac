@@ -4,7 +4,7 @@ provider "aws" {
   default_tags {
     tags = {
       "owner"        = "DevopsTeam"
-      "project-name" = "sql-database-iac-${var.environment}"
+      "project-name" = "database-iac-${var.environment}"
       "managed-by"   = "terraform"
     }
   }

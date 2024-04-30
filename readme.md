@@ -1,1 +1,1 @@
-Repositório para o gerenciamento de banco de dados relacionais
+Repositório para o gerenciamento de banco de dados

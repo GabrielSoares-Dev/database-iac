@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket = "remote-state-devops-team-us"
-    key    = "iac/sql-database-iac/terraform.tfstate"
+    key    = "iac/database-iac/terraform.tfstate"
     region = "us-east-2"
   }
 }
