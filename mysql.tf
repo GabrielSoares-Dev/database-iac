@@ -1,6 +1,6 @@
 resource "aws_db_instance" "mysql_cluster" {
   allocated_storage                   = 20
-  identifier                          = "mysql_db_${lower(var.environment)}"
+  identifier                          = "mysql-${lower(var.environment)}"
   engine                              = "mysql"
   engine_version                      = "8.0.32"
   parameter_group_name                = "default.mysql8.0"
