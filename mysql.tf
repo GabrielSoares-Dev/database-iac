@@ -11,7 +11,7 @@ resource "aws_db_instance" "mysql_cluster" {
   username                            = "admin"
   manage_master_user_password         = true
   iam_database_authentication_enabled = true
-  db_subnet_group_name                = aws_db_subnet_group.private_subnet_group.name
+  db_subnet_group_name                = data.aws_db_subnet_group.private_subnet_group.name
   multi_az                            = false
   vpc_security_group_ids              = [aws_security_group.mysql_security_group.id]
   skip_final_snapshot                 = false
