@@ -7,7 +7,7 @@ resource "aws_security_group" "mysql_security_group" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "TCP"
-    cidr_blocks = "172.23.16.1"
+    cidr_blocks = ["172.23.16.1"]
   }
   tags = {
     Name = "mysql_security_group"
