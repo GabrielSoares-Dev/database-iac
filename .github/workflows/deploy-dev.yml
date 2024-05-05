@@ -23,7 +23,7 @@ jobs:
         with:
           terraform_version: "1.2.0"
       - name: Init
-        run: terraform init -upgrade
+        run: terraform init
       - name: Validate
         run: terraform validate
       - name: Select workspace
