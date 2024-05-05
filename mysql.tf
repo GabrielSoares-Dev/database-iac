@@ -14,5 +14,5 @@ resource "aws_db_instance" "mysql_cluster" {
   db_subnet_group_name                = data.aws_db_subnet_group.private_subnet_group.name
   multi_az                            = false
   vpc_security_group_ids              = [aws_security_group.mysql_security_group.id]
-  skip_final_snapshot                 = false
+  skip_final_snapshot                 = true
 }
