@@ -9,7 +9,7 @@ resource "aws_db_instance" "mysql_cluster" {
   max_allocated_storage               = 1000
   backup_retention_period             = 7
   username                            = var.mysql_admin_username
-  password                            = random_password.mysql_password.result
+  password                            = aws_ssm_parameter.mysql_admin_password.value
   iam_database_authentication_enabled = true
   db_subnet_group_name                = data.aws_db_subnet_group.public_subnet_group.name
   multi_az                            = false
