@@ -1,7 +1,7 @@
 resource "aws_ssm_parameter" "mysql_admin_username" {
   name        = "/${lower(var.environment)}/database/mysql/username/admin"
   description = "Admin mysql username"
-  type        = "String"
+  type        = "SecureString"
   value       =  var.mysql_admin_username
 
   tags = {
