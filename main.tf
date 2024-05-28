@@ -6,6 +6,11 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.1.0"
     }
+
+    random = {
+      source = "hashicorp/random"
+      version = "3.6.2"
+    }
   }
 
   backend "s3" {
