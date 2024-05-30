@@ -1,3 +1,24 @@
+resource "aws_ssm_parameter" "mysql_host" {
+  name        = "/${lower(var.environment)}/database/mysql/host"
+  description = "Admin mysql password"
+  type        = "SecureString"
+  value       = aws_db_instance.mysql_cluster.domain
+  tags = {
+    environment = lower(var.environment)
+  }
+}
+
+resource "aws_ssm_parameter" "mysql_port" {
+  name        = "/${lower(var.environment)}/database/mysql/port"
+  description = "Admin mysql password"
+  type        = "SecureString"
+  value       = aws_db_instance.mysql_cluster.port
+  tags = {
+    environment = lower(var.environment)
+  }
+}
+
+
 resource "aws_ssm_parameter" "mysql_admin_username" {
   name        = "/${lower(var.environment)}/database/mysql/username/admin"
   description = "Admin mysql username"
@@ -18,4 +39,6 @@ resource "aws_ssm_parameter" "mysql_admin_password" {
     environment = lower(var.environment)
   }
 }
+
+
 
