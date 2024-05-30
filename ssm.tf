@@ -1,8 +1,8 @@
 resource "aws_ssm_parameter" "mysql_host" {
   name        = "/${lower(var.environment)}/database/mysql/host"
-  description = "Admin mysql password"
+  description = "Mysql host"
   type        = "SecureString"
-  value       = aws_db_instance.mysql_cluster.domain
+  value       = aws_db_instance.mysql_cluster.address
   tags = {
     environment = lower(var.environment)
   }
@@ -10,7 +10,7 @@ resource "aws_ssm_parameter" "mysql_host" {
 
 resource "aws_ssm_parameter" "mysql_port" {
   name        = "/${lower(var.environment)}/database/mysql/port"
-  description = "Admin mysql password"
+  description = "Mysql port"
   type        = "SecureString"
   value       = aws_db_instance.mysql_cluster.port
   tags = {
