@@ -23,8 +23,14 @@ jobs:
         run: terraform init
       - name: Validate
         run: terraform validate
-      - name: Select workspace
-        run: terraform workspace select dev
+      - name: Select or Create Workspace
+        run: |
+          terraform workspace list | grep -q "dev"
+          if [ $? -ne 0 ]; then
+            terraform workspace new dev
+          else
+            terraform workspace select dev
+          fi
       - name: Plan
         run: terraform plan -out plan.out
       - name: Apply
