@@ -25,11 +25,20 @@ jobs:
         run: terraform validate
       - name: Select or Create Workspace
         run: |
-          terraform workspace list | grep -q "dev"
-          if [ $? -ne 0 ]; then
-            terraform workspace new dev
+          set -e
+
+          WORKSPACE_NAME="dev"
+
+          # List existing workspaces
+          WORKSPACES=$(terraform workspace list)
+
+          # Check if the desired workspace exists
+          if echo "$WORKSPACES" | grep -q "\b${WORKSPACE_NAME}\b"; then
+            echo "Workspace ${WORKSPACE_NAME} exists. Selecting..."
+            terraform workspace select "${WORKSPACE_NAME}"
           else
-            terraform workspace select dev
+            echo "Workspace ${WORKSPACE_NAME} does not exist. Creating..."
+            terraform workspace new "${WORKSPACE_NAME}"
           fi
       - name: Plan
         run: terraform plan -out plan.out
