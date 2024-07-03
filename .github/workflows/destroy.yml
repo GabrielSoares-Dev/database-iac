@@ -4,7 +4,7 @@ on:
 jobs:
   terraform:
     name: destroy
-    uses: GabrielSoares-Dev/workflows/.github/workflows/terraform-destroy.yml@master
+    uses: GabrielSoares-Dev/workflows/.github/workflows/terraform/destroy.yml@master
     with:
       work_dir: ./
       environment: dev
