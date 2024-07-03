@@ -42,4 +42,4 @@ jobs:
       - name: Plan
         run: terraform plan -out plan.out -var-file="env/dev.tfvars"
       - name: Apply
-        run: terraform apply -var-file="env/dev.tfvars" plan.out 
+        run: terraform apply plan.out 
