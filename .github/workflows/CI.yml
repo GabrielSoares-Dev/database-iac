@@ -7,7 +7,7 @@ on:
 jobs:
   terraform:
     name: deploy
-    uses: GabrielSoares-Dev/workflows/.github/workflows/terraform/CI.yml@master
+    uses: GabrielSoares-Dev/workflows/.github/workflows/terraform-CI.yml@master
     with:
       work_dir: ./
       environment: dev
