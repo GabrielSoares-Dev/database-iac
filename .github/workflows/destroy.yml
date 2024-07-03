@@ -25,4 +25,4 @@ jobs:
       - name: Select workspace
         run: terraform workspace select dev
       - name: Destroy
-        run: terraform destroy -auto-approve
+        run: terraform destroy -auto-approve -var-file="env/dev.tfvars"
