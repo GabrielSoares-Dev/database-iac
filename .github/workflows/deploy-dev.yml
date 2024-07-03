@@ -40,6 +40,6 @@ jobs:
             terraform workspace new "${WORKSPACE_NAME}"
           fi
       - name: Plan
-        run: terraform plan -out plan.out -var-file="dev.tfvars"
+        run: terraform plan -out plan.out -var-file="env/dev.tfvars"
       - name: Apply
         run: terraform apply plan.out -var-file="env/dev.tfvars"
