@@ -4,7 +4,7 @@ variable "environment" {
 }
 
 variable "mysql_settings" {
-  type = map(object({
+  type = object({
     allocated_storage                   = number
     engine                              = string
     engine_version                      = string
@@ -18,5 +18,5 @@ variable "mysql_settings" {
     multi_az                            = bool
     skip_final_snapshot                 = bool
     publicly_accessible                 = bool
-  }))
+  })
 }
